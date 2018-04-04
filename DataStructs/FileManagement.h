@@ -16,8 +16,8 @@ private:
 class MergeSort
 {
 public:
-	void splitSort(vector<int>& );
+	void sort(vector<int>& );
 private:
-	void mSort(vector<int>&, vector<int>&, vector<int>&);
+	void merge(vector<int>&, vector<int>&, vector<int>&);
 	
 };

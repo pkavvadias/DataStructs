@@ -40,7 +40,7 @@ vector<string> &File::getWordsVector()
 	return words;
 }
 
-void MergeSort::splitSort(vector<int>&v)
+void MergeSort::sort(vector<int>&v)
 {
 	if (v.size() <= 1) {
 		return;
@@ -51,14 +51,14 @@ void MergeSort::splitSort(vector<int>&v)
 	copy(begin(v), begin(v) + mid, back_inserter(left));
 	copy(begin(v)+mid, end(v), back_inserter(right));
 
-	splitSort(left);
-	splitSort(right);
-	mSort(left, right, v);
+	sort(left);
+	sort(right);
+	merge(left, right, v);
 	
 }
 
 
-void MergeSort::mSort(vector<int> &left, vector<int> &right, vector<int>&v)
+void MergeSort::merge(vector<int> &left, vector<int> &right, vector<int>&v)
 {
 	int lcomp = left.size();
 	int rcomp = right.size();
@@ -99,8 +99,8 @@ int main(){
 	//MergeSort* M=new MergeSort;
 	MergeSort M;
 	cout << "created\n";
-	M.splitSort(f->getIntVector());
-	//f.splitSort(f.integers);
+	M.sort(f->getIntVector());
+	//f.sort(f.integers);
 	cout << "sorting...\n";
 	cout << f->getIntVector()[0]<<endl;
 	//cout << f.getIntVector()[2] << endl;
