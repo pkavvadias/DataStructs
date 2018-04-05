@@ -5,6 +5,6 @@ class Search
 {
 public:
 	int linearSearch(std::vector<int>&,int);
-	int binarySearch;
+	int binarySearch(std::vector<int>&, int);
 	
 };

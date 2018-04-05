@@ -107,7 +107,7 @@ int main(){
 	cout << f->getIntVector()[0]<<endl;
 	//cout << f.getIntVector()[2] << endl;
 	Search s;
-	int result=s.linearSearch(f->getIntVector(), 235910);
+	int result=s.linearSearch(f->getIntVector(),10);
 	if (result==-1)
 	{
 		cout << "not found" << endl;
@@ -116,5 +116,16 @@ int main(){
 	{
 		cout << "Number found at " << result << endl;
 	}
+	
+	result = s.binarySearch(f->getIntVector(), 235910);
+	if (result == -1)
+	{
+		cout << "not found" << endl;
+	}
+	else
+	{
+		cout << "Number found at " << result << endl;
+	}
+
 	getchar();
 	}
