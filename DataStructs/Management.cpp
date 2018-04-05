@@ -127,5 +127,14 @@ int main(){
 		cout << "Number found at " << result << endl;
 	}
 
+	result = s.interpolationSearch(f->getIntVector(), 423586);
+	if (result == -1)
+	{
+		cout << "not found" << endl;
+	}
+	else
+	{
+		cout << "Number found at " << result << endl;
+	}
 	getchar();
 	}

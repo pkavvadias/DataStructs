@@ -1,5 +1,4 @@
 #include "Search.h"
-#include <iostream>
 
 using namespace std;
 
@@ -22,10 +21,10 @@ int Search::binarySearch(std::vector<int>& v,int s)
 {
 	int mid = -1;
 	int left=0;
-	int right = v.size();
+	int right = v.size()-1;
 	while(left<=right){		
 		mid = (left + right) / 2;  //Find middle
-		if(s==v[mid])
+		if(s==v[mid]) //If equal
 		{
 			return mid;
 		}
@@ -39,6 +38,38 @@ int Search::binarySearch(std::vector<int>& v,int s)
 		}
 	}
 	return mid;
+}
+
+int Search::interpolationSearch(std::vector<int>& v, int s)
+{
+	
+	int low = 0;
+	int high = v.size() - 1;
+	int mid=-1;
+
+	while(low<=high)
+	{
+		//low+[(high-low)/(v[high]-v[low]]*(s-v[low]
+		mid = low + (((high - low) / (v[high] - v[low])) * (s - v[low]));
+		
+		if (s == v[mid]) //If equal
+		{
+			return mid;
+		}
+		
+		if (s > v[mid])
+		{
+			low = mid+1;  
+		}
+		
+		 if (s < v[mid])
+		{
+			
+			high = mid - 1;
+		}		 
+	}
+	return (v[low] == s) ? low : -1;//Simplified if
+	
 }
 
 
