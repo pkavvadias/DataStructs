@@ -1,23 +1,23 @@
 #pragma once
 #include <vector>
-using namespace std;
+
 class File
 {
 public:
-	void loadIntegers(string);
-	void loadWords(string);
-	vector<int> &getIntVector() ;
-	vector<string> &getWordsVector();
+	void loadIntegers(std::string);
+	void loadWords(std::string);
+	std::vector<int> &getIntVector() ;
+	std::vector<std::string> &getWordsVector();
 private:
-	vector<int> integers;
-	vector<string> words;
+	std::vector<int> integers;
+	std::vector<std::string> words;
 };
 
 class MergeSort
 {
 public:
-	void sort(vector<int>& );
+	void sort(std::vector<int>& );
 private:
-	void merge(vector<int>&, vector<int>&, vector<int>&);
+	void merge(std::vector<int>&, std::vector<int>&, std::vector<int>&);
 	
 };

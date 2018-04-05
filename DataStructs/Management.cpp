@@ -1,8 +1,10 @@
 #include "FileManagement.h"
+#include "Search.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 
+using namespace std;
 void File::loadIntegers(string filename)
 {
 	ifstream readInts;
@@ -104,6 +106,15 @@ int main(){
 	cout << "sorting...\n";
 	cout << f->getIntVector()[0]<<endl;
 	//cout << f.getIntVector()[2] << endl;
-	cout << "finished\n";
+	Search s;
+	int result=s.linearSearch(f->getIntVector(), 235910);
+	if (result==-1)
+	{
+		cout << "not found" << endl;
+	}
+	else
+	{
+		cout << "Number found at " << result << endl;
+	}
 	getchar();
 	}
