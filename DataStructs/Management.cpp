@@ -5,6 +5,7 @@
 #include <string>
 
 using namespace std;
+
 void File::loadIntegers(string filename)
 {
 	ifstream readInts;
@@ -136,5 +137,22 @@ int main(){
 	{
 		cout << "Number found at " << result << endl;
 	}
+	RBTree tree;
+	
+	for(int w=0;w<f->getIntVector().size();w++)
+	{
+		
+		tree.insert(f->getIntVector()[w]);
+
+	}
+	tree.insert(5);
+	/**
+	tree.insert(5);
+	tree.insert(6);
+	tree.insert(7);
+	tree.insert(2);
+	tree.search(6);
+	*/
+	tree.search(172982);
 	getchar();
 	}

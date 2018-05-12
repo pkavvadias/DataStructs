@@ -21,3 +21,33 @@ private:
 	void merge(std::vector<int>&, std::vector<int>&, std::vector<int>&);
 	
 };
+
+class Node
+{
+public:
+	int key;
+	Node *parent;
+	std::string colour;
+	Node *left;
+	Node *right;
+};
+
+class RBTree
+{
+public:
+	
+	RBTree()
+	{
+		q = nullptr;
+		root = nullptr;
+	}
+	
+	void insert(int);
+	void search(int);
+private:
+	Node *root;
+	Node *q;
+	void fix(Node*);
+	void rightrotate(Node*);
+	void leftrotate(Node*);
+};

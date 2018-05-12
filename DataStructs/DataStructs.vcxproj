@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Management.cpp" />
+    <ClCompile Include="RedBlack.cpp" />
     <ClCompile Include="Search.cpp" />
   </ItemGroup>
   <ItemGroup>
