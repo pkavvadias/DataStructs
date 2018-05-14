@@ -145,7 +145,7 @@ void RBTree::rightrotate(Node* y)
 	x->right = y;
 	y->parent = x;
 }
-
+/**
 void RBTree::search(int x)
 {
 	if (root == nullptr)
@@ -195,4 +195,6 @@ void RBTree::search(int x)
 			cout << "There is no left child"<<endl;
 
 	}
+	
 }
+*/

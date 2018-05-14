@@ -117,11 +117,13 @@
   <ItemGroup>
     <ClInclude Include="FileManagement.h" />
     <ClInclude Include="Search.h" />
+    <ClInclude Include="TimeCalc.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Management.cpp" />
     <ClCompile Include="RedBlack.cpp" />
     <ClCompile Include="Search.cpp" />
+    <ClCompile Include="TimeCalc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="integers.txt" />

@@ -21,6 +21,9 @@
     <ClInclude Include="Search.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TimeCalc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Management.cpp">
@@ -30,6 +33,9 @@
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="RedBlack.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeCalc.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "Search.h"
 
 class File
 {
@@ -41,9 +42,9 @@ public:
 		q = nullptr;
 		root = nullptr;
 	}
-	
+	friend void Search::RbSearch(int,RBTree&);
 	void insert(int);
-	void search(int);
+	//void search(int);
 private:
 	Node *root;
 	Node *q;

@@ -1,9 +1,11 @@
 #include "FileManagement.h"
 #include "Search.h"
+#include "TimeCalc.h"
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <chrono>
+#include <algorithm>
 using namespace std;
 
 void File::loadIntegers(string filename)
@@ -145,7 +147,7 @@ int main(){
 		tree.insert(f->getIntVector()[w]);
 
 	}
-	tree.insert(5);
+	
 	/**
 	tree.insert(5);
 	tree.insert(6);
@@ -153,6 +155,35 @@ int main(){
 	tree.insert(2);
 	tree.search(6);
 	*/
-	tree.search(172982);
+	vector<chrono::microseconds> d;
+	auto start = chrono::high_resolution_clock::now();
+	int i = 0;
+	for(i;i<100;i++)
+	{
+		auto separate = chrono::high_resolution_clock::now();
+		s.RbSearch(i,tree);
+		//tree.search(i);
+		auto sto = chrono::high_resolution_clock::now();
+		auto dur= chrono::duration_cast<chrono::microseconds>(sto - separate);
+		//cout << "Dur " << dur.count() << endl;
+		d.push_back(dur);
+	}
+	//tree.search(172982);
+	
+	/**
+	for(int i=0;i==100000;i++)
+	{
+		tree.search(i);
+		cout << i << endl;
+	}
+	*/
+	auto stop = chrono::high_resolution_clock::now();
+	auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
+	cout << "Total duration(in milliseconds): " << duration.count() << endl;
+	auto max = *max_element(d.begin(), d.end());
+	cout << "Max value(in microseconds): " << max.count() << endl;
+	Calculate T;
+	T.rbTreeCalc(900, tree);
+
 	getchar();
 	}
