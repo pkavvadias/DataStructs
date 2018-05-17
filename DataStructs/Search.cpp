@@ -54,7 +54,8 @@ int Search::interpolationSearch(std::vector<int>& v, int s)
 		//low+[(high-low)/(v[high]-v[low]]*(s-v[low]
 		
 			mid = low + (((high - low) / (v[high] - v[low])) * (s - v[low]));
-		
+			//cout << "MID" << mid << endl;
+			//cout << v.size() << endl;
 		
 		if (s == v[mid]) //If equal
 		{

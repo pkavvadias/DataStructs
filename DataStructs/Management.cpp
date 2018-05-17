@@ -95,8 +95,9 @@ void MergeSort::merge(vector<int> &left, vector<int> &right, vector<int>&v)
 }
 
 
-
+/**
 int main(){
+	
 	File* f=new File;
 	//File f;
 	f->loadIntegers("integers.txt");
@@ -148,13 +149,7 @@ int main(){
 
 	}
 	
-	/**
-	tree.insert(5);
-	tree.insert(6);
-	tree.insert(7);
-	tree.insert(2);
-	tree.search(6);
-	*/
+	
 	vector<chrono::microseconds> d;
 	auto start = chrono::high_resolution_clock::now();
 	int i = 0;
@@ -168,15 +163,9 @@ int main(){
 		//cout << "Dur " << dur.count() << endl;
 		d.push_back(dur);
 	}
-	//tree.search(172982);
 	
-	/**
-	for(int i=0;i==100000;i++)
-	{
-		tree.search(i);
-		cout << i << endl;
-	}
-	*/
+	
+	
 	auto stop = chrono::high_resolution_clock::now();
 	auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
 	cout << "Total duration(in milliseconds): " << duration.count() << endl;
@@ -186,4 +175,176 @@ int main(){
 	T.rbTreeCalc(900, tree);
 
 	getchar();
+	
+
 	}
+	*/
+
+int main()
+{
+	int select;
+	int helper;
+	int searchValue;
+	int result;
+	File f;
+	Search s;
+	MergeSort ms;
+	RBTree tree;
+	Calculate calc;
+
+	cout << "What do you want to do?" << endl;
+	cout << "1.Load integers" << endl;
+	cout << "2.Load words" << endl;
+	cout << "3.Search an integer" << endl;
+	cout << "4.Insert integer(at Red-Black Tree)" << endl;
+	cout << "5.Calculate search times" << endl;
+	cout << "6.Search a word" << endl;
+	cout << "7.Add a word" << endl;
+	cout << "8.Delete a word" << endl;
+	cout << "9.Exit" << endl;
+
+	cin >> select;
+	while(select>9||select<1)
+	{
+		cout << "Try again" << endl;
+		cin >> select;
+	}
+	while(select!=8)
+	{
+		switch (select)
+		{
+		case 1:
+		{
+			f.loadIntegers("integers.txt");
+			ms.sort(f.getIntVector());
+			for(int i:f.getIntVector())
+			{
+				tree.insert(i);
+			}
+		}
+		break;
+		case 2:
+		{
+			f.loadWords("words.txt");
+		}
+		break;
+		case 3:
+			{
+			cout << "Press 1 for linear,2 for binary,3 for interpolation or 4 for red-black search" << endl;
+			cin >> helper;
+			while (helper>4 || helper<1)
+			{
+				cout << "Please try again" << endl;
+				cin >> helper;
+			}
+			cout << "Enter the integer you want to search" << endl;
+			cin >> searchValue;
+				switch(helper)
+				{
+				case 1:
+					{
+					result=s.linearSearch(f.getIntVector(), searchValue);
+					if (result == -1)
+					{
+						cout << "Not found" << endl;
+					}
+					else
+					{
+						cout << "Number found at " << result << " place" << endl;
+					}
+					}
+					break;
+				case 2:
+					{
+					result=s.binarySearch(f.getIntVector(), searchValue);
+					if (result == -1)
+					{
+						cout << "Not found" << endl;
+					}
+					else
+					{
+						cout << "Number found at " << result << " place" << endl;
+					}
+					}
+					break;
+				case 3:
+					{
+					result=s.interpolationSearch(f.getIntVector(), searchValue);
+					if (result == -1)
+					{
+						cout << "Not found" << endl;
+					}
+					else
+					{
+						cout << "Number found at " << result << " place"<<endl;
+					}
+					}
+					break;
+				case 4:
+					{
+					s.RbSearch(searchValue, tree);
+					}
+				}
+			}
+			break;
+		case 4:
+			{
+			cout << "Enter the integer you want to insert" << endl;
+			cin >> helper;
+			tree.insert(helper);
+			}
+			break;
+		case 5:
+			{
+			cout << "DATASTRUCTS BENCHMARK" << endl << endl;
+			cout << "Press 1 to measure linear,2 for binary,3 for interpolation or 4 for red-black search time " << endl;
+			cin >> helper;
+				while(helper<1||helper>4)
+				{
+					cout << "Try again" << endl;
+					cin >> helper;
+				}
+				cout << "Insert the number of searches you want to run" << endl;
+				cin >> searchValue;
+				if(helper==1)
+				{
+					calc.linearCalc(searchValue, f.getIntVector());
+				}
+				if(helper==2)
+				{
+					calc.binaryCalc(searchValue, f.getIntVector());
+				}
+				if(helper==3)
+				{
+					calc.interpolCalc(searchValue, f.getIntVector());
+				}
+				if(helper==4)
+				{
+					calc.rbTreeCalc(searchValue, tree);
+				}
+			}
+			break;
+		case 6:
+			{
+			cout << "NOT READY YET" << endl;
+			}
+			break;
+		case 7:
+			{
+			cout << "NOT READY YET" << endl;
+			}
+			break;
+		case 8:
+			{
+			cout << "NOT READY YET" << endl;
+			}
+			break;
+		case 9:
+			{
+			return 0;
+			}
+		}
+		cout << "Anything else?" << endl;
+		cin >> select;
+	}
+}
