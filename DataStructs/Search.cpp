@@ -127,5 +127,27 @@ void Search::RbSearch(int x,RBTree &t)
 
 	}
 }
+bool Search::TrieSearch(string word, TrieNode*& trie)
+{
+	// return false if Trie is empty
+	if (trie == nullptr)
+		return false;
+
+	TrieNode* current = trie;
+	for (int i = 0; i < word.length(); i++)
+	{
+		// go to next node
+		current = current->characters[word[i]];
+
+		// if string is invalid (reached end of path in Trie)
+		if (current == nullptr)
+			return false;
+	}
+
+	// if current node is a leaf and we have reached the
+	// end of the string, return true
+	return current->isEnd;
+}
+
 
 

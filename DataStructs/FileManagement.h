@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include "Search.h"
-
 class File
 {
 public:
@@ -51,4 +50,25 @@ private:
 	void fix(Node*);
 	void rightrotate(Node*);
 	void leftrotate(Node*);
+};
+
+class TrieNode
+{
+public:
+	TrieNode()
+	{
+		isEnd = false;
+		for(int i=0;i<128;i++)
+		{
+			characters[i] = nullptr;
+		}
+
+	}
+	void insert(std::string,TrieNode *);
+	bool deletion(std::string,TrieNode*&);
+	friend bool Search::TrieSearch(std::string, TrieNode *&);
+private:
+	TrieNode* characters[128];//ASCII has 128 characters
+	bool isEnd;
+	bool haveChildren(TrieNode const*);
 };

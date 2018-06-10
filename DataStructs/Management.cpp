@@ -191,6 +191,7 @@ int main()
 	MergeSort ms;
 	RBTree tree;
 	Calculate calc;
+	TrieNode* trie=new TrieNode();
 
 	cout << "What do you want to do?" << endl;
 	cout << "1.Load integers" << endl;
@@ -226,6 +227,10 @@ int main()
 		case 2:
 		{
 			f.loadWords("words.txt");
+				for(string w:f.getWordsVector())
+				{
+					trie->insert(w,trie);
+				}
 		}
 		break;
 		case 3:

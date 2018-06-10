@@ -128,6 +128,7 @@
     <ClCompile Include="RedBlack.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="TimeCalc.cpp" />
+    <ClCompile Include="Trie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="integers.txt" />
