@@ -186,6 +186,7 @@ int main()
 	int helper;
 	int searchValue;
 	int result;
+	string stringhelper;
 	File f;
 	Search s;
 	MergeSort ms;
@@ -210,7 +211,7 @@ int main()
 		cout << "Try again" << endl;
 		cin >> select;
 	}
-	while(select!=8)
+	while(select!=9)
 	{
 		switch (select)
 		{
@@ -331,17 +332,40 @@ int main()
 			break;
 		case 6:
 			{
-			cout << "NOT READY YET" << endl;
+			cin.ignore();//Required to clear buffer
+			cout << "Enter word to search" << endl;
+			getline(cin, stringhelper);
+			if(s.TrieSearch(stringhelper, trie))
+			{
+				cout << "Word found" << endl;
+			}
+			else
+			{
+				cout << "Word not found" << endl;
+			}
 			}
 			break;
 		case 7:
 			{
-			cout << "NOT READY YET" << endl;
+			cin.ignore();
+			cout << "Insert word you want to add" << endl;
+			getline(cin, stringhelper);
+			trie->insert(stringhelper, trie);
 			}
 			break;
 		case 8:
 			{
-			cout << "NOT READY YET" << endl;
+			cin.ignore();
+			cout << "Insert word you want to delete" << endl;
+			getline(cin, stringhelper);
+			if(trie->deletion(stringhelper, trie))
+			{
+				cout << "Word '" << stringhelper << "' deleted" << endl;
+			}
+			else
+			{
+				cout << "Word wasn't deleted(maybe did not exist?)" << endl;
+			}
 			}
 			break;
 		case 9:

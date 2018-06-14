@@ -38,11 +38,11 @@ bool TrieNode::deletion(string key,TrieNode*& curr)
 	if (curr == nullptr)
 		return false;
 
-	// if we have not reached the end of the key
+	// if not at the end of string
 	if (key.length())
 	{
-		// recurse for the node corresponding to next character in the key
-		// and if it returns true, delete current node (if it is non-leaf)
+		//recursive function to find the node of the next character in the string
+		//if it finds it(if it returns true) delete the crrent node if it isn't leaf
 
 		if (curr != nullptr &&
 			curr->characters[key[0]] != nullptr &&
@@ -60,30 +60,28 @@ bool TrieNode::deletion(string key,TrieNode*& curr)
 			}
 		}
 	}
-	// if we have reached the end of the key
+	// if at the end of string
 	if (key.length() == 0 && curr->isEnd)
 	{
-		// if current node is a leaf node and don't have any children
+		// if current node is a leaf node and doesn't have children
 		if (!haveChildren(curr))
 		{
 			// delete current node
 			delete curr;
 			curr = nullptr;
 
-			// delete non-leaf parent nodes
+			// delete parent nodes that are not leafs
 			return true;
 		}
 
-		// if current node is a leaf node and have children
+		// if current node is a leaf and has children
 		else
 		{
-			// mark current node as non-leaf node (DON'T DELETE IT)
+			// mark current node as non leaf
 			curr->isEnd = false;
 
-			// don't delete its parent nodes
 			return false;
 		}
 	}
 
-	return false;
 }
