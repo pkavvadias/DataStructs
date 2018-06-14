@@ -43,7 +43,6 @@ public:
 	}
 	friend void Search::RbSearch(int,RBTree&);
 	void insert(int);
-	//void search(int);
 private:
 	Node *root;
 	Node *q;

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="File">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAQQAAAgAAAAAAAAAACAAEAAAAAA=</HashCode>
+      <FileName>FileManagement.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MergeSort">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>FileManagement.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Node">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAABAAAAEAAAAAAAIAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>FileManagement.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RBTree">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAIBAAAAAAAAiAAAAAAAAgAAAACAAAAAAAAA=</HashCode>
+      <FileName>FileManagement.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrieNode">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAABAAABABAAAAAAAAAAAgAAI=</HashCode>
+      <FileName>FileManagement.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
