@@ -61,7 +61,8 @@ void Calculate::interpolCalc(int numberOfSearches, std::vector<int> &vec)
 	int totalTime = 0;
 	Search s;
 	default_random_engine randomGen;
-	std::uniform_int_distribution<int> range(0, *max_element(vec.begin(), vec.end()));//Required for interpolation
+	//std::uniform_int_distribution<int> range(0, *max_element(vec.begin(), vec.end()));//Required for interpolation
+	std::uniform_int_distribution<int> range(0, 900000);
 	for (int i = 0; i<numberOfSearches; i++)
 	{
 		auto start = chrono::high_resolution_clock::now();

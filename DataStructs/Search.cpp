@@ -48,15 +48,10 @@ int Search::interpolationSearch(std::vector<int>& v, int s)
 	int low = 0;
 	int high = v.size() - 1;
 	int mid=-1;
-	
+	if (s > v[high]) { return mid; }//Else crash
 	while(low<=high)
-	{
-		//low+[(high-low)/(v[high]-v[low]]*(s-v[low]
-		
-			mid = low + (((high - low) / (v[high] - v[low])) * (s - v[low]));
-			//cout << "MID" << mid << endl;
-			//cout << v.size() << endl;
-		
+	{		
+			 mid = low + (((high - low) / (v[high] - v[low])) * (s - v[low]));
 		if (s == v[mid]) //If equal
 		{
 			return mid;
@@ -139,13 +134,12 @@ bool Search::TrieSearch(string word, TrieNode*& trie)
 		// go to next node
 		current = current->characters[word[i]];
 
-		// if string is invalid (reached end of path in Trie)
+		// if string doesnt exist
 		if (current == nullptr)
 			return false;
 	}
 
-	// if current node is a leaf and we have reached the
-	// end of the string, return true
+	// if current node is leaf and we are at the end of the string return true
 	return current->isEnd;
 }
 
