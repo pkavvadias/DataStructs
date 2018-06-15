@@ -7,7 +7,6 @@ using namespace std;
 void TrieNode::insert(string word,TrieNode *current)
 {
 	// start from root node
-	//TrieNode *current = this;
 	for (int i = 0; i < word.length(); i++)
 	{
 		// create a new node if path doesn't exists
