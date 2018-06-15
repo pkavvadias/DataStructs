@@ -24,6 +24,7 @@ int Search::binarySearch(std::vector<int>& v,int s)
 	int mid = -1;
 	int left=0;
 	int right = v.size()-1;
+	if (s > v[right]) { return mid; }//Else bug
 	while(left<=right){		
 		mid = (left + right) / 2;  //Find middle
 		if(s==v[mid]) //If equal
