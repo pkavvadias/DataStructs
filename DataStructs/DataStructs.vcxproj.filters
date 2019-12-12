@@ -52,8 +52,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="README.md" />
-    <None Include="C:\Users\pkava\Desktop\ceid\ΔομέςΑναφορά.pdf" />
-    <None Include="C:\Users\pkava\Desktop\ceid\ΔομεςΕκφωνηση.pdf" />
   </ItemGroup>
 </Project>
