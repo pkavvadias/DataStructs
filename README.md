@@ -1,1 +1,1 @@
-Project in Data Structs in CEID
+Project for Data Structs lesson at CEID
